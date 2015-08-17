@@ -32,7 +32,7 @@ class SpacesController < ApplicationController
   	def update
   		@space = Space.find(params[:id])
       if @space.user_id == current_user.id
-    		if @space.update(space_params)
+    		if @space.update(space_param)
       		redirect_to @space
     		else
       		render 'edit'
