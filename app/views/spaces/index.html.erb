@@ -4,12 +4,14 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Views</th>
   </tr>
  
   <% @spaces.each do |space| %>
     <tr>
       <td><%= space.title %></td>
       <td><%= space.text %></td>
+      <td><%= space.views %></td>
       <td><%= link_to 'Show', space_path(space) %></td>
       <td><%= link_to 'Edit', edit_space_path(space) %></td>
       <td><%= link_to 'Destroy', space_path(space),

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807075817) do
+ActiveRecord::Schema.define(version: 20150817092918) do
 
   create_table "spaces", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150807075817) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "views"
   end
 
   add_index "spaces", ["user_id"], name: "index_spaces_on_user_id"

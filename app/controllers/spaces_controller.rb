@@ -6,6 +6,8 @@ class SpacesController < ApplicationController
   	end
 	def show
     	@space = Space.find(params[:id])
+      @space.increment!(:views)
+      @space.save
   	end
 	def new
 		@space = Space.new
