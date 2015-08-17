@@ -1,0 +1,14 @@
+<h1>Listing Spaces</h1>
+ <%= link_to 'New space', new_space_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @spaces.each do |space| %>
+    <tr>
+      <td><%= space.title %></td>
+      <td><%= space.text %></td>
+  <% end %>
+</table>
