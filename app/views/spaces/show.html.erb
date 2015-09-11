@@ -1,10 +1,11 @@
-<p>
-  <strong>Title:</strong>
-  <%= @space.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @space.text %>
-</p>
+ <div class="row">
+            <div class="col-md-7">
+              <img src="http://placehold.it/700x300") class="responsive">
+                
+            </div>
+            <div class="col-md-5">
+                <h3><%= @space.title %></h3>
+                <p><%= @space.text %></p>
+            </div>
+        </div>
 <%= link_to "Back", "/" %>
