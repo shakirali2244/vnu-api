@@ -2,10 +2,9 @@
  <%= link_to 'New space', new_space_path %>
  
   <% @spaces.each do |space| %>
-  <div class="row">
             <div class="col-md-7">
               <%= link_to image_tag("http://placehold.it/700x300"), space_path(space) %>
-                
+               <hr> 
                 
             </div>
             <div class="col-md-5">
@@ -14,6 +13,4 @@
                 <p><%= space.text %></p>
                 <%= link_to 'Open', space_path(space),{ :class=>"btn btn-primary" } %>
             </div>
-        </div>
-        <hr>
   <% end %>
