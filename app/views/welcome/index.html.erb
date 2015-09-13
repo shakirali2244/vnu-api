@@ -1,10 +1,16 @@
+<div class="row">
 <h1>Listing Spaces</h1>
- <%= link_to 'New space', new_space_path %>
- 
+<div class="col-md-4">
+ <%= link_to 'New space', new_space_path, { :class=>"btn btn-info" } %>
+</div>
+<br />
+<br />
+
+</div>
   <% @spaces.each do |space| %>
   <div class="row">
             <div class="col-md-7">
-              <%= link_to image_tag("http://placehold.it/700x300"), space_path(space) %>
+              <%= link_to image_tag("http://placehold.it/700x300", width: "100%"), space_path(space) %>
                 
                 
             </div>
@@ -12,7 +18,13 @@
                 <h3><%= space.title %></h3>
                 <h4><%= space.views %> views </h4>
                 <p><%= space.text %></p>
+                <% if user_signed_in? %>
+                    <% if space.user_id == current_user.id %>
+                          <%=link_to 'Edit', edit_space_path(space),{ :class=>"btn btn-danger" } %>
+                    <% end %>
+                <% end %>
                 <%= link_to 'Open', space_path(space),{ :class=>"btn btn-primary" } %>
+                <%= mail_to User.find(space.user_id).email, 'Contact',{:class=>"btn btn-primary" }  %>
             </div>
         </div>
         <hr>
